@@ -1,11 +1,9 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ── Body: page background color and base font ── */
 body {
   background-color: #f3e5d8;
   font-family: "Inter", sans-serif;
@@ -28,7 +26,7 @@ body {
 .img {
   width: 100%;
   height: 400px;
-  object-fit: cover; /* fills slot, crops rather than squishes */
+  object-fit: cover; 
   object-position: center;
   display: block;
 }
@@ -37,8 +35,8 @@ body {
   padding: 30px 30px;
 }
 
-/* TYPOGRAPHY  */ 
-
+/* TYPOGRAPHY  */
+/* Section heading */
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
@@ -46,15 +44,12 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* Section heading */
-h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #6c3348;
-  margin-bottom: 15px;
+.description {
+  font-size: 0.9rem;
+  color: #3d2e1e;
+  line-height: 1.7;
+  margin-bottom: 28px;
 }
-
 #info {
   background: #fff7fc;
   border-radius: 20px;
@@ -63,7 +58,13 @@ h2 {
   font-size: 0.9rem;
   line-height: 1.5rem;
 }
-
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #6c3348;
+  margin-bottom: 15px;
+}
 #info ul {
   margin-left: 30px;
 }
@@ -73,20 +74,7 @@ h2 {
   font-weight: 600;
 }
 
-/* ── Horizontal rule between sections ── */
-.section-divider {
-  border: none;
-  border-top: 1px solid #ede5da;
-  margin-bottom: 36px;
-}
-
-/* ─Section bottom spacing─ */
-section {
-  margin-bottom: 36px;
-}
-
 /* INGREDIENTS — CSS Grid */
-
 #ingredients ul {
   display: grid; /* GRID: two-column layout */
   grid-template-columns: 1fr 1fr; /* two equal columns */
@@ -102,22 +90,25 @@ section {
   border-bottom: 1px dashed #ede5da;
 }
 
-/* INSTRUCTIONS — Ordered list with custom counters*/
+/* ─Section bottom spacing─ */
+section {
+  margin-bottom: 36px;
+}
 
+/* INSTRUCTIONS — Ordered list with custom counters*/
 #instructions ol {
   list-style: none;
   padding-left: 0;
   counter-reset: steps; /* start custom counter at 0 */
 }
-
 /* Each step card */
 #instructions ol li {
   counter-increment: steps; /* increment counter per item */
   font-size: 0.88rem;
-  color: #3d2e1e;
+  color: #847b75;
   line-height: 1.5;
-  margin-bottom: 12px;
-  padding: 14px 16px 14px 52px; /* left padding makes room for number */
+  margin-bottom: 10px;
+  padding: 14px 16px 14px 52px; 
   background: #fff7fc;
   border-radius: 10px; /* rounded step cards */
   position: relative;
@@ -127,7 +118,7 @@ section {
 #instructions ol li::before {
   content: counter(steps);
   position: absolute;
-  left: 14px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
   font-family: "Playfair Display", serif;
@@ -147,7 +138,8 @@ section {
 #nutritional-info p {
   font-size: 0.8rem;
   color: #9e8977;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+ 
 }
 
 /* Table container: full width, rounded, bordered */
@@ -172,7 +164,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #fff; /* white text on dark header */
+  color: #fff;
 }
 
 /* Data rows */
@@ -184,7 +176,7 @@ section {
   border-bottom: none;
 }
 
-/* Zebra striping: alternate row background */
+/* Zebra striping*/
 #nutritional-info tbody tr:nth-child(even) {
   background: #fff7fc;
 }
@@ -195,18 +187,15 @@ section {
   color: #3d2e1e;
 }
 
-/* Amount value cell: bold terracotta */
+/* Amount value cell*/
 #nutritional-info tbody td:last-child {
   padding: 12px 20px;
   font-weight: 600;
-  color: #b84c18; /* accent color for values */
+  color: #b84c18; 
   text-align: right;
 }
 
-/* ═══════════════════════════════════════════════
-   RESPONSIVE — Mobile adjustments
-   Collapses grid to 1 column, reduces padding/font size
-═══════════════════════════════════════════════ */
+/*RESPONSIVE — Mobile adjustments Collapses grid to 1 column, reduces padding and font size */
 @media (max-width: 560px) {
   .card-body {
     padding: 24px 20px 36px;
@@ -220,48 +209,17 @@ section {
   #ingredients ul {
     grid-template-columns: 1fr;
   }
-
-  .hero-img {
-    height: 200px;
+  .img {
+    height: 250px;
   }
 }
-
-
-
-
-/* ── Description paragraph just below h1 ── */
-.description {
-  font-size: 0.9rem;
-  color: #6b5d4f;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-/* ── Visually hidden heading (for screen readers only) ── */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ═══════════════════════════════════════════════
-   SITE FOOTER — copyright + footer nav
-═══════════════════════════════════════════════ */
+/* SITE FOOTER  */
 .site-footer {
-padding: 30px 0;
-display: flex;
+  padding: 30px 0;
+  display: flex;
   align-items: center;
-justify-content: center;
-margin: 0 auto;
+  justify-content: center;
+  margin: 0 auto;
   font-size: 0.8rem;
   color: #9e8977;
 }
-
-
-
