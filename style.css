@@ -1,0 +1,267 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Body: page background color and base font ── */
+body {
+  background-color: #f3e5d8;
+  font-family: "Inter", sans-serif;
+  color: #2c2416;
+  min-height: 100vh;
+  padding: 48px 16px;
+}
+
+/* CARD */
+.card {
+  max-width: 550px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGE*/
+.img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* fills slot, crops rather than squishes */
+  object-position: center;
+  display: block;
+}
+
+.card-body {
+  padding: 30px 30px;
+}
+
+/* TYPOGRAPHY  */ 
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+/* Section heading */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #6c3348;
+  margin-bottom: 15px;
+}
+
+#info {
+  background: #fff7fc;
+  border-radius: 20px;
+  padding: 20px 5px;
+  color: #847b75;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+#info ul {
+  margin-left: 30px;
+}
+
+#info ul li strong {
+  color: #1e1209;
+  font-weight: 600;
+}
+
+/* ── Horizontal rule between sections ── */
+.section-divider {
+  border: none;
+  border-top: 1px solid #ede5da;
+  margin-bottom: 36px;
+}
+
+/* ─Section bottom spacing─ */
+section {
+  margin-bottom: 36px;
+}
+
+/* INGREDIENTS — CSS Grid */
+
+#ingredients ul {
+  display: grid; /* GRID: two-column layout */
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 8px 20px;
+}
+
+/* Individual ingredient item */
+#ingredients ul li {
+  font-size: 0.88rem;
+  color: #847b75;
+  padding: 6px 0 6px 16px;
+  margin-left: 30px;
+  border-bottom: 1px dashed #ede5da;
+}
+
+/* INSTRUCTIONS — Ordered list with custom counters*/
+
+#instructions ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: steps; /* start custom counter at 0 */
+}
+
+/* Each step card */
+#instructions ol li {
+  counter-increment: steps; /* increment counter per item */
+  font-size: 0.88rem;
+  color: #3d2e1e;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding: 14px 16px 14px 52px; /* left padding makes room for number */
+  background: #fff7fc;
+  border-radius: 10px; /* rounded step cards */
+  position: relative;
+}
+
+/*  Steps number */
+#instructions ol li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b84c18;
+}
+
+#instructions ol li strong {
+  color: #1e1209;
+  font-weight: 600;
+}
+
+/*NUTRITION TABLE*/
+
+/* Subtitle above the table */
+#nutritional-info p {
+  font-size: 0.8rem;
+  color: #9e8977;
+  margin-bottom: 14px;
+}
+
+/* Table container: full width, rounded, bordered */
+#nutritional-info table {
+  width: 100%;
+  border-collapse: collapse; /* removes double borders between cells */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ede5da;
+  font-size: 0.88rem;
+}
+
+/* Column header row */
+#nutritional-info thead tr {
+  background: #b84c18; /* terracotta header background */
+}
+
+#nutritional-info thead th {
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #fff; /* white text on dark header */
+}
+
+/* Data rows */
+#nutritional-info tbody tr {
+  border-bottom: 1px solid #ede5da;
+}
+
+#nutritional-info tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Zebra striping: alternate row background */
+#nutritional-info tbody tr:nth-child(even) {
+  background: #fff7fc;
+}
+
+/* Nutrient name cell */
+#nutritional-info tbody td:first-child {
+  padding: 12px 20px;
+  color: #3d2e1e;
+}
+
+/* Amount value cell: bold terracotta */
+#nutritional-info tbody td:last-child {
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #b84c18; /* accent color for values */
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — Mobile adjustments
+   Collapses grid to 1 column, reduces padding/font size
+═══════════════════════════════════════════════ */
+@media (max-width: 560px) {
+  .card-body {
+    padding: 24px 20px 36px;
+  }
+
+  h1 {
+    font-size: 1.65rem; /* slightly smaller title on mobile */
+  }
+
+  /* single-column ingredients on small screens */
+  #ingredients ul {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-img {
+    height: 200px;
+  }
+}
+
+
+
+
+/* ── Description paragraph just below h1 ── */
+.description {
+  font-size: 0.9rem;
+  color: #6b5d4f;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ── Visually hidden heading (for screen readers only) ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   SITE FOOTER — copyright + footer nav
+═══════════════════════════════════════════════ */
+.site-footer {
+padding: 30px 0;
+display: flex;
+  align-items: center;
+justify-content: center;
+margin: 0 auto;
+  font-size: 0.8rem;
+  color: #9e8977;
+}
+
+
+

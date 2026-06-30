@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Describes the page for search engines -->
+    <meta name="description" content="A quick and easy Classic Cheddar Cheese Omelette recipe — ready in 15 minutes." />
+    <meta name="author" content="Abdul Rahman" />
+    <title>Classic Cheddar Cheese Omelette — Recipe Page</title>
+    <!-- Link to external stylesheet — no inline styles used anywhere -->
+    <link rel="stylesheet" href="style.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <!-- Main content -->
+    <main id="main-content">
+      <article class="card" >
+
+        <!-- Hero image: object-fit keeps it undistorted -->
+        <img
+          class="img"
+          src="images/IMG_7807.JPG"
+          alt="A golden cheddar cheese omelette folded on a white plate"
+           />
+
+        <div class="card-body">
+          <h1>Classic Cheese Omelette</h1>
+          <p class="description">
+            A simple yet delicious omelette filled with rich, melted cheddar cheese.
+            Perfect for a quick breakfast or a lazy weekend brunch.
+          </p>
+             <section id="info">
+            <h2>Preparation time</h2>
+            <ul>
+                <li><strong>Preparation Time:</strong> 5 minutes</li>
+                <li><strong>Cook Time:</strong> 10 minutes</li>
+                <li><strong>Total Time:</strong> 15 minutes</li>
+                <li><strong>Servings:</strong> 4</li>
+            </ul>
+        </section>
+            <!-- Ingredients -->
+          <section id="ingredients">
+            <h2 id="ingredients-heading">Ingredients</h2>
+            <ul>
+              <li>2-3cup shredded cheddar</li>
+              <li>Salt, to taste</li>
+              <li>Pepper, to taste</li>
+              <li>1 tbsp butter or oil</li>
+              <li>Optional: diced veggies</li>
+              <li>Optional: fresh herbs</li>
+              <li>Optional: cooked meats</li>
+            </ul>
+          </section>
+
+          <hr class="section-divider" />
+
+          <!-- Instructions: <ol> because sequence matters -->
+          <section id="instructions">
+            <h2 id="instructions-heading">Instructions</h2>
+            <ol>
+              <li><strong>Beat the eggs:</strong> Whisk eggs with salt and pepper until combined. Add a splash of milk for a fluffier result.</li>
+              <li><strong>Heat the pan:</strong> Place a non-stick skillet over medium heat and melt the butter until bubbling.</li>
+              <li><strong>Cook the omelette:</strong> Pour in the egg mixture. Tilt the pan so the eggs coat the surface evenly.</li>
+              <li><strong>Add fillings:</strong> When edges set but the centre is still slightly runny, sprinkle cheddar over one half.</li>
+              <li><strong>Fold and serve:</strong> Fold the omelette in half, cook one more minute, then slide onto a plate.</li>
+              <li><strong>Enjoy:</strong> Serve immediately with extra salt and pepper if needed.</li>
+            </ol>
+          </section>
+
+          <hr class="section-divider" />
+
+          <!-- Nutrition: <table> is the correct element for tabular data -->
+          <section id="nutritional-info" >
+            <h2 id="nutrition-heading">Nutrition</h2>
+            <p>Per serving, without optional fillings.</p>
+
+            <table aria-describedby="nutrition-heading">
+              <!-- thead labels the columns for screen readers -->
+              <thead>
+                <tr>
+                  <th scope="col">Nutrient</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <!-- tbody holds the actual data rows -->
+              <tbody>
+                <tr>
+                  <td>Calories</td>
+                  <td>170 kcal</td>
+                </tr>
+                <tr>
+                  <td>Protein</td>
+                  <td>15 g</td>
+                </tr>
+                <tr>
+                  <td>Fat</td>
+                  <td>10 g</td>
+                </tr>
+                <tr>
+                  <td>Carbohydrates</td>
+                  <td>1 g</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- ── Page footer: copyright, links -->
+    <footer class="site-footer" role="contentinfo">
+      <p>&copy; <time datetime="2026">2026</time> Abdul Rahman &mdash; My Recipe Page</p>
+    
+    </footer>
+
+  </body>
+</html>
